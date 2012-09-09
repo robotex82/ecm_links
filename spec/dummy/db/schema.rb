@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120909121754) do
+ActiveRecord::Schema.define(:version => 20120909134527) do
 
   create_table "ecm_links_categories", :force => true do |t|
     t.string   "locale"
@@ -27,5 +27,18 @@ ActiveRecord::Schema.define(:version => 20120909121754) do
     t.datetime "created_at",                          :null => false
     t.datetime "updated_at",                          :null => false
   end
+
+  create_table "ecm_links_links", :force => true do |t|
+    t.string   "name"
+    t.string   "url"
+    t.text     "description"
+    t.string   "markup_language"
+    t.integer  "ecm_links_category_id"
+    t.integer  "position"
+    t.datetime "created_at",            :null => false
+    t.datetime "updated_at",            :null => false
+  end
+
+  add_index "ecm_links_links", ["ecm_links_category_id"], :name => "index_ecm_links_links_on_ecm_links_category_id"
 
 end

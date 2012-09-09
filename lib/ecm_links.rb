@@ -1,3 +1,4 @@
+require 'acts_as_list'
 require 'acts_as_markup'
 require 'awesome_nested_set'
 require 'friendly_id'

@@ -10,6 +10,7 @@ PATH
   remote: .
   specs:
     ecm_faq (0.0.1.pre)
+      acts_as_list
       acts_as_markup
       awesome_nested_set
       friendly_id
@@ -59,6 +60,7 @@ GEM
     activesupport (3.2.8)
       i18n (~> 0.6)
       multi_json (~> 1.0)
+    acts_as_list (0.1.8)
     acts_as_markup (1.4.2)
       RedCloth
       RedCloth (~> 4.2)

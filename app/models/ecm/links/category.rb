@@ -5,6 +5,13 @@ class Ecm::Links::Category < ActiveRecord::Base
   # acts as markup
   acts_as_markup :language => :variable, :columns => [ :long_description, :short_description ]
 
+  # associations
+  has_many :ecm_links_links, 
+           :class_name => Ecm::Links::Link,
+           :dependent => :destroy,
+           :foreign_key => :ecm_links_category_id,
+           :order => 'position'
+
   # attributes
   attr_accessible :depth,
                   :lft,
