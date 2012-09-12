@@ -3,7 +3,7 @@ require 'active_support/core_ext/module/attribute_accessors'
 require 'active_support/hash_with_indifferent_access'
 
 module Ecm
-  module Contact
+  module Links
     module Configuration
       def configure
         yield self
