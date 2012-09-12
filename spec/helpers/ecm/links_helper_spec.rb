@@ -3,7 +3,7 @@ require 'spec_helper'
 module Ecm
   describe LinksHelper do    
     describe "#render_link_footer" do
-      before(:all) do
+      before(:each) do
         @categories = FactoryGirl.create_list(:ecm_links_category_for_link_footer, 6)
       end
       

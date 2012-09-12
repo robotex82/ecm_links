@@ -9,10 +9,13 @@ GIT
 PATH
   remote: .
   specs:
-    ecm_faq (0.0.1.pre)
+    ecm_links (0.0.1.pre)
+      active_admin-acts_as_list
+      active_admin-awesome_nested_set (~> 0.0.3)
       acts_as_list
       acts_as_markup
       awesome_nested_set
+      awesome_nested_set-tools
       friendly_id
       rails (~> 3.2.8)
       rails_tools-absence_validator (~> 0.0.1)
@@ -34,6 +37,10 @@ GEM
       rack-cache (~> 1.2)
       rack-test (~> 0.6.1)
       sprockets (~> 2.1.3)
+    active_admin-acts_as_list (0.0.6)
+      rails (~> 3.2.5)
+    active_admin-awesome_nested_set (0.0.3)
+      rails (~> 3.2.5)
     activeadmin (0.5.0)
       arbre (>= 1.0.1)
       bourbon (>= 1.0.0)
@@ -78,6 +85,8 @@ GEM
     arel (3.0.2)
     awesome_nested_set (2.1.4)
       activerecord (>= 3.0.0)
+    awesome_nested_set-tools (0.0.1)
+      rails (~> 3.2.5)
     bcrypt-ruby (3.0.1)
     bourbon (2.1.1)
       sass (>= 3.1)
@@ -253,7 +262,7 @@ DEPENDENCIES
   activeadmin
   capybara
   coffee-rails
-  ecm_faq!
+  ecm_links!
   factory_girl_rails (~> 1.0)
   ffaker
   forgery (= 0.5.0)

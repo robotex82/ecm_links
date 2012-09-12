@@ -19,7 +19,7 @@ namespace :ecm_links do
       require "forgery"
 
       # Create example categories
-      20.times do
+      5.times do
         Ecm::Links::Category.create! do |c|   
           c.locale = I18n.available_locales.map(&:to_s).choice
           c.name = "#{Faker::Company.name} Category"
@@ -27,12 +27,21 @@ namespace :ecm_links do
         end  
       end   
       
+      50.times do
+        Ecm::Links::Category.create! do |c| 
+          c.parent = Ecm::Links::Category.all.choice
+          c.name = "#{Faker::Company.name} Category"
+          c.link_footer_column = [nil, 1, 2, 3, 4].choice
+        end  
+      end        
+      
       # Create example links
       categories = Ecm::Links::Category.all
       50.times do
         Ecm::Links::Link.create! do |l|
           l.name ="#{Faker::Company.name} Link"
           l.url = "#{Faker::Internet.http_url} Link"
+          l.description = Faker::Lorem.paragraph(rand(3))
           l.ecm_links_category = categories.choice
         end
       end     

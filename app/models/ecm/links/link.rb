@@ -15,7 +15,7 @@ class Ecm::Links::Link < ActiveRecord::Base
 
   # attributes
   attr_accessible :description,
-                  :ecm_products_product_id,
+                  :ecm_links_category_id,
                   :markup_language,
                   :name, 
                   :position, 

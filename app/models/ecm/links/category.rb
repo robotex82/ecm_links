@@ -47,6 +47,10 @@ class Ecm::Links::Category < ActiveRecord::Base
   validates :markup_language, :presence => true,
                               :inclusion => MARKUP_LANGUAGES
 
+  def to_s
+    name
+  end
+
   def self.for_link_footer
     where(self.arel_table['link_footer_column'].not_eq(nil))
   end

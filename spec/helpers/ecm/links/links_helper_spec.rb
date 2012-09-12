@@ -4,7 +4,7 @@ module Ecm
   module Links
     describe LinksHelper do    
       describe "#render_link" do
-        before(:all) do
+        before(:each) do
           @link = FactoryGirl.create(:ecm_links_link)
         end
         

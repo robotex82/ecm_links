@@ -5,7 +5,7 @@ require "ecm/links/version"
 
 # Describe your gem and declare its dependencies:
 Gem::Specification.new do |s|
-  s.name        = "ecm_faq"
+  s.name        = "ecm_links"
   s.version     = Ecm::Links::VERSION
   s.authors     = ["Roberto Vasquez Angel"]
   s.email       = ["roberto@vasquez-angel.de"]
@@ -16,9 +16,12 @@ Gem::Specification.new do |s|
   s.files = Dir["{app,config,db,lib}/**/*"] + ["MIT-LICENSE", "Rakefile", "README.rdoc"]
 
   s.add_dependency "rails", "~> 3.2.8"
+  s.add_dependency "active_admin-acts_as_list"
+  s.add_dependency "active_admin-awesome_nested_set", '~>0.0.3'  
   s.add_dependency 'acts_as_list'
   s.add_dependency 'acts_as_markup'
   s.add_dependency 'awesome_nested_set'
+  s.add_dependency 'awesome_nested_set-tools'
   s.add_dependency 'friendly_id'
   s.add_dependency 'rails_tools-absence_validator', '~>0.0.1'
 

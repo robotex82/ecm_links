@@ -2,7 +2,7 @@
   <div class="container">
     <div class="row footer-links">
       <% Ecm::Links::Configuration.link_footer_columns.times do |column| %>
-        <div class="<%= Ecm::Links::Configuration.link_footer_column_css_classes.join(' ') %>">
+        <div class="column<%= column + 1 %> <%= Ecm::Links::Configuration.link_footer_column_css_classes.join(' ') %>">
           <% categories[column + 1].each do |c| %>
             <h2><%= c.name %></h2>
             
