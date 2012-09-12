@@ -15,6 +15,7 @@ class Ecm::Links::Category < ActiveRecord::Base
   # attributes
   attr_accessible :depth,
                   :lft,
+                  :link_footer_column,
                   :locale,
                   :long_description,
                   :markup_language,
@@ -45,6 +46,10 @@ class Ecm::Links::Category < ActiveRecord::Base
                    :uniqueness => { :scope => [ :parent_id ] }
   validates :markup_language, :presence => true,
                               :inclusion => MARKUP_LANGUAGES
+
+  def self.for_link_footer
+    where(self.arel_table['link_footer_column'].not_eq(nil))
+  end
 
   private
     # private methods

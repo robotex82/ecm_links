@@ -7,9 +7,10 @@ class CreateEcmLinksCategories < ActiveRecord::Migration
       t.text :short_description
       t.text :long_description
       t.string :markup_language
+      t.integer :link_footer_column
 
       # associations
-      t.integer :ecm_links_link_count, :default => 0, :null => false
+      t.integer :ecm_links_links_count, :default => 0, :null => false
 
       # awesome nested set
       t.integer :lft

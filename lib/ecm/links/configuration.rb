@@ -11,6 +11,9 @@ module Ecm
 
       mattr_accessor :link_footer_columns
       @@link_footer_columns = nil
+      
+      mattr_accessor :link_footer_column_css_classes
+      @@link_footer_column_css_classes = nil
     end
   end
 end

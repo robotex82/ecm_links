@@ -18,14 +18,15 @@ ActiveRecord::Schema.define(:version => 20120909134527) do
     t.text     "short_description"
     t.text     "long_description"
     t.string   "markup_language"
-    t.integer  "ecm_links_link_count", :default => 0, :null => false
+    t.integer  "link_footer_column"
+    t.integer  "ecm_links_links_count", :default => 0, :null => false
     t.integer  "lft"
     t.integer  "rgt"
     t.integer  "parent_id"
     t.integer  "depth"
     t.string   "slug"
-    t.datetime "created_at",                          :null => false
-    t.datetime "updated_at",                          :null => false
+    t.datetime "created_at",                           :null => false
+    t.datetime "updated_at",                           :null => false
   end
 
   create_table "ecm_links_links", :force => true do |t|
