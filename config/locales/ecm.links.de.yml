@@ -1,1 +1,5 @@
 de:
+  ecm:
+    links:
+      active_admin:
+        menu: Links

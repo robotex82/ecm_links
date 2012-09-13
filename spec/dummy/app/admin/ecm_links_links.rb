@@ -1,4 +1,12 @@
+include ActiveAdmin::ActsAsList::Helper if defined?(ActiveAdmin)
+
 ActiveAdmin.register Ecm::Links::Link do
+  # menu entry settings
+  menu :parent => Proc.new { I18n.t('ecm.links.active_admin.menu') }.call
+  
+  # acts as list
+  sortable_member_actions
+  
   form do |f|
     f.inputs do
       f.input :ecm_links_category, :as => :select, :collection => nested_set_options(Ecm::Links::Category) { |c| "#{'&#160;&#160;&#160;&#160;' * c.level} |-- #{c.to_s}".html_safe }

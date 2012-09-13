@@ -2,6 +2,9 @@ include ActiveAdmin::ActsAsList::Helper if defined?(ActiveAdmin)
 include ActiveAdmin::AwesomeNestedSet::Helper if defined?(ActiveAdmin)
 
 ActiveAdmin.register Ecm::Links::Category do
+  # menu entry settings
+  menu :parent => Proc.new { I18n.t('ecm.links.active_admin.menu') }.call
+  
   # awesome nested set
   sortable_tree_member_actions
   
@@ -75,6 +78,7 @@ ActiveAdmin.register Ecm::Links::Category do
     
     panel Ecm::Links::Category.human_attribute_name(:ecm_links_links) do
       table_for ecm_links_category.ecm_links_links, :i18n => Ecm::Links::Link do
+        sortable_columns
         column(:name) { |link| link_to link.name, [:admin, link] }
         column(:url) { |link| link_to link.url, link.url }
         column :created_at
