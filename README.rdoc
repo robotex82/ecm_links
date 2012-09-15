@@ -1,3 +1,61 @@
 = ECM Links
 
+= Installation
+
+
+Add it to your gemfile:
+
+  # Gemfile
+  gem 'ecm_links'
+  
+Install your bundle:
+
+  > bundle install
+  
+Generate initializer:
+
+  > rails generate ecm:links:install 
+
+Generatre the migrations:
+
+  > rake ecm_links_engine:install:migrations
+
+Migrate:
+
+  > rake db:migrate
+
+  
+== Optional: Generate locale files
+
+You may want to copy the locales to your app:
+
+  > rails generate ecm:links:locales
+
+
+== Optional: Example data generation/Data management
+
+There are following rake tasks to manage the database content:
+
+  * rake ecm_links:db:clear!                  # Clears all data!
+  * rake ecm_links:db:populate                # Creates example_data
+  * rake ecm_links:db:populate!               # Purges and creates example data
+
+= Usage
+
+Use the helper to display the link footer:
+
+  # i.e. app/views/layouts/application.html.erb 
+  <%= render_link_footer %>
+
+== Optional: Display a link tree
+
+To display a link tree, you have to add the routes:
+
+  # config/routes.rb
+  Ecm::Links::Routing.routes(self)
+  
+This will give you a route to /ecm_links_categories
+
+= License
+
 This project rocks and uses MIT-LICENSE.

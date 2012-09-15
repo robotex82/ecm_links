@@ -22,6 +22,17 @@ ActiveAdmin.register Ecm::Links::Category do
       f.input :link_footer_column, :as => :select, :collection => (1..Ecm::Links::Configuration.link_footer_columns).to_a
     end
     
+     f.inputs do
+      f.has_many :ecm_links_links do |l|
+        if l.object.persisted?
+          l.input :_destroy, :as => :boolean, :label => I18n.t('active_admin.delete')
+        end
+        l.input :name
+        l.input :url
+        l.input :description
+      end
+    end 
+    
     f.actions
   end
   

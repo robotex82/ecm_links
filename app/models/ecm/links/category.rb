@@ -14,6 +14,7 @@ class Ecm::Links::Category < ActiveRecord::Base
 
   # attributes
   attr_accessible :depth,
+                  :ecm_links_links_attributes,
                   :lft,
                   :link_footer_column,
                   :locale,
@@ -24,6 +25,7 @@ class Ecm::Links::Category < ActiveRecord::Base
                   :rgt,
                   :short_description,
                   :slug
+  accepts_nested_attributes_for :ecm_links_links, :allow_destroy => true
 
   # awesome nested set
   acts_as_nested_set
