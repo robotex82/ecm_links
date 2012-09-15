@@ -3,3 +3,7 @@ de:
     links:
       active_admin:
         menu: Links
+  resources:
+    ecm_links_link_categories: link-kategorien
+    ecm_links_links: links
+
