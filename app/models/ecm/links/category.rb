@@ -53,8 +53,12 @@ class Ecm::Links::Category < ActiveRecord::Base
     name
   end
 
+  def self.for_actual_locale
+    where(:locale => I18n.locale)
+  end
+
   def self.for_link_footer
-    where(self.arel_table['link_footer_column'].not_eq(nil))
+    where(self.arel_table['link_footer_column'].not_eq(nil)).for_actual_locale
   end
 
   private
