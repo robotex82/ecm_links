@@ -1,6 +1,6 @@
 FactoryGirl.define do
   factory :ecm_links_category, :class => Ecm::Links::Category do
-    locale 'en'
+    locale I18n.locale
     sequence(:name) { |n| "#{Faker::Company.name} #{n} Category" }
     markup_language 'textile'
     

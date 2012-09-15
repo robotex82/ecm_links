@@ -6,7 +6,8 @@ module Ecm
       describe "#render_link_category" do
         context "basic rendering" do
           before(:each) do
-            @category = FactoryGirl.create(:ecm_links_category)
+            I18n.locale = :en
+            @category = FactoryGirl.create(:ecm_links_category, :locale => 'en')
           end
           
           subject { helper.render_link_category(@category) }
@@ -16,6 +17,7 @@ module Ecm
 
         context "i18n support" do
           before(:each) do
+            I18n.locale = :en
             @category = FactoryGirl.create(:ecm_links_category, :locale => 'de')
           end
 

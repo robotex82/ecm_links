@@ -9,7 +9,7 @@ GIT
 PATH
   remote: .
   specs:
-    ecm_links (0.0.3.pre)
+    ecm_links (0.0.4.pre)
       active_admin-acts_as_list
       active_admin-awesome_nested_set (~> 0.0.3)
       acts_as_list
