@@ -4,6 +4,6 @@ en:
       active_admin:
         menu: links
   resources:
-    ecm_links_link_categories: link-categories
+    ecm_links_categories: link-categories
     ecm_links_links: links
 
