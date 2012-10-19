@@ -5,7 +5,7 @@
         <h2><%= c.name %></h2>
         
         <% c.ecm_links_links.each do |l| %>
-          <p><%= render l %></p>
+          <p><%= render :partial => 'ecm/links/links/link', :locals => { :link => l } %></p>
         <% end %>
         
       <% end if categories.has_key?(column + 1) %>
